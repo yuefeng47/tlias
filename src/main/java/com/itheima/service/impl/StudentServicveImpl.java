@@ -32,4 +32,13 @@ public class StudentServicveImpl implements StudentService {
         //4戻り
         return new PageBean(students.getTotal(),students.getResult());
     }
+
+    /**
+     * @param ids
+     */
+    @Override
+    public void deleteStudentByIds(List<Integer> ids) {
+        studentMapper.deleteStudentByIds(ids);
+
+    }
 }

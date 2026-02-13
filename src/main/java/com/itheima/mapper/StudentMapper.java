@@ -15,4 +15,6 @@ public interface StudentMapper {
     @Select("select * from student")
     List<Student> selectStudent();
 
+
+    void deleteStudentByIds(List<Integer> ids);
 }
