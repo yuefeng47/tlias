@@ -51,5 +51,13 @@ public class StudentController {
         return Result.success();
     }
 
+    //Put /violation/{id}/{score}
+    //規律違反をした学生
+    @PutMapping("/violation/{id}/{score}")
+    public Result updateStudentViolation(@RequestBody Student student){
+        studentService.updateStudentViolation(student);
+        return Result.success();
+    }
+
 
 }

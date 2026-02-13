@@ -69,4 +69,13 @@ public class StudentServicveImpl implements StudentService {
     public void updateStudent(Student student) {
         studentMapper.updateStudent(student);
     }
+
+    /**
+     * @param student
+     * 規律違反をした学生
+     */
+    @Override
+    public void updateStudentViolation(Student student) {
+        studentMapper.updateStudentViolation(student);
+    }
 }

@@ -37,5 +37,14 @@
         where id = #{id}
     </update>
     
+    <!-- 学生の違反処理（違反回数と減点を更新する） -->
+    <update id="updateStudentViolation">
+        update student
+        set violation_count = violation_count + 1,
+            violation_score = violation_score + #{score},
+            update_time = now()
+        where id = #{id}
+    </update>
+    
 </mapper>
 

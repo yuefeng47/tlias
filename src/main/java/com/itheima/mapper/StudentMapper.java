@@ -33,4 +33,7 @@ public interface StudentMapper {
 
     
     void updateStudent(Student student);
+
+
+    void updateStudentViolation(Student student);
 }

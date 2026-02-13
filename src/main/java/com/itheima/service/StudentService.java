@@ -20,4 +20,7 @@ public interface StudentService {
 
     //学生を更新する
     void updateStudent(Student student);
+
+    //規律違反をした学生
+    void updateStudentViolation(Student student);
 }
