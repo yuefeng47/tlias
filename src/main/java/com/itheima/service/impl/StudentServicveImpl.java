@@ -9,6 +9,7 @@ import com.itheima.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -35,10 +36,22 @@ public class StudentServicveImpl implements StudentService {
 
     /**
      * @param ids
+     * ids削除
      */
     @Override
     public void deleteStudentByIds(List<Integer> ids) {
         studentMapper.deleteStudentByIds(ids);
 
+    }
+
+    /**
+     * @param student
+     * POST学生新規登録
+     */
+    @Override
+    public void insertStudent(Student student) {
+        student.setCreateTime(LocalDateTime.now());
+        student.setUpdateTime(LocalDateTime.now());
+        studentMapper.insertStudent(student);
     }
 }

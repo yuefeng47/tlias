@@ -3,6 +3,7 @@ package com.itheima.controller;
 import com.github.pagehelper.Page;
 import com.itheima.pojo.PageBean;
 import com.itheima.pojo.Result;
+import com.itheima.pojo.Student;
 import com.itheima.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,11 @@ public class StudentController {
     }
 
     //POST学生新規登録
-    PostMapping
+    @PostMapping
+    public Result insertStudent(@RequestBody Student student){
+        studentService.insertStudent(student);
+        return Result.success();
+    }
 
 
 }

@@ -3,6 +3,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.StudentMapper">
     
+    <!-- 学生を新規登録する -->
+    <insert id="insertStudent">
+        insert into student (name, no, gender, phone, id_card, is_college, address, degree, graduation_date, clazz_id, violation_count, violation_score, create_time, update_time)
+        values (#{name}, #{no}, #{gender}, #{phone}, #{idCard}, #{isCollege}, #{address}, #{degree}, #{graduationDate}, #{clazzId}, #{violationCount}, #{violationScore}, #{createTime}, #{updateTime})
+    </insert>
+    
     <!-- 学生を一括削除する -->
     <delete id="deleteStudentByIds">
         delete from student

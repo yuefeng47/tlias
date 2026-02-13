@@ -15,6 +15,10 @@ public interface StudentMapper {
     @Select("select * from student")
     List<Student> selectStudent();
 
-
+    //削除ByIds
     void deleteStudentByIds(List<Integer> ids);
+
+
+    //学生の新規登録
+    void insertStudent(Student student);
 }
