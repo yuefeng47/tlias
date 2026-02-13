@@ -31,12 +31,11 @@ public class StudentServicveImpl implements StudentService {
         //3形式を変換する
         Page<Student> students = (Page<Student>) pageList;
         //4戻り
-        return new PageBean(students.getTotal(),students.getResult());
+        return new PageBean(students.getTotal(), students.getResult());
     }
 
     /**
-     * @param ids
-     * ids削除
+     * @param ids ids削除
      */
     @Override
     public void deleteStudentByIds(List<Integer> ids) {
@@ -45,8 +44,7 @@ public class StudentServicveImpl implements StudentService {
     }
 
     /**
-     * @param student
-     * POST学生新規登録
+     * @param student POST学生新規登録
      */
     @Override
     public void insertStudent(Student student) {
@@ -57,11 +55,18 @@ public class StudentServicveImpl implements StudentService {
 
     /**
      * @param id
-     * @return
-     * IDに基づいて検索する
+     * @return IDに基づいて検索する
      */
     @Override
     public Student selectStudentById(Integer id) {
-        return  studentMapper.selectStudentById(id);
+        return studentMapper.selectStudentById(id);
+    }
+
+    /**
+     * @param student 学生を更新する
+     */
+    @Override
+    public void updateStudent(Student student) {
+        studentMapper.updateStudent(student);
     }
 }

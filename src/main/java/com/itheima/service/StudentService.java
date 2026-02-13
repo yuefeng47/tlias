@@ -17,4 +17,7 @@ public interface StudentService {
 
     //GET IDに基づいて検索する
     Student selectStudentById(Integer id);
+
+    //学生を更新する
+    void updateStudent(Student student);
 }

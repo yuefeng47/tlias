@@ -18,5 +18,24 @@
         </foreach>
     </delete>
     
+    <!-- 学生情報を更新する -->
+    <update id="updateStudent">
+        update student
+        set name = #{name},
+            no = #{no},
+            gender = #{gender},
+            phone = #{phone},
+            id_card = #{idCard},
+            is_college = #{isCollege},
+            address = #{address},
+            degree = #{degree},
+            graduation_date = #{graduationDate},
+            clazz_id = #{clazzId},
+            violation_count = #{violationCount},
+            violation_score = #{violationScore},
+            update_time = #{updateTime}
+        where id = #{id}
+    </update>
+    
 </mapper>
 
