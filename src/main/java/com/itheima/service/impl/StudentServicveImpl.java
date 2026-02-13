@@ -54,4 +54,14 @@ public class StudentServicveImpl implements StudentService {
         student.setUpdateTime(LocalDateTime.now());
         studentMapper.insertStudent(student);
     }
+
+    /**
+     * @param id
+     * @return
+     * IDに基づいて検索する
+     */
+    @Override
+    public Student selectStudentById(Integer id) {
+        return  studentMapper.selectStudentById(id);
+    }
 }

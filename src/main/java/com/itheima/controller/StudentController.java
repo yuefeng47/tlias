@@ -25,15 +25,29 @@ public class StudentController {
 
     //ID一覧に基づいて学生を削除する
     @DeleteMapping("/{ids}")
-    public Result deleteStudentByIds(@PathVariable List<Integer> ids){
+    public Result deleteStudentByIds(@PathVariable List<Integer> ids) {
         studentService.deleteStudentByIds(ids);
         return Result.success();
     }
 
     //POST学生新規登録
     @PostMapping
-    public Result insertStudent(@RequestBody Student student){
+    public Result insertStudent(@RequestBody Student student) {
         studentService.insertStudent(student);
+        return Result.success();
+    }
+
+    //GET IDに基づいて検索する
+    @GetMapping("/{id}")
+    public Result selectStudentById(@PathVariable Integer id) {
+        Student student = studentService.selectStudentById(id);
+        return Result.success(student);
+    }
+
+    //PUT 学生を更新する
+    @PutMapping
+    public Result updateStudent(@RequestBody Student student) {
+        studentService.updateStudent(student);
         return Result.success();
     }
 

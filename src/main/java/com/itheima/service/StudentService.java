@@ -14,4 +14,7 @@ public interface StudentService {
 
     //POST学生新規登録
     void insertStudent(Student student);
+
+    //GET IDに基づいて検索する
+    Student selectStudentById(Integer id);
 }
