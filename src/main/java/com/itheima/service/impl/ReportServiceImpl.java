@@ -5,6 +5,7 @@ import com.itheima.pojo.StatData;
 import com.itheima.pojo.Student;
 import com.itheima.service.ReportService;
 import com.itheima.vo.JobData;
+import com.itheima.vo.StudentCountData;
 import com.itheima.vo.StudentDegreeData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,16 +34,16 @@ public class ReportServiceImpl implements ReportService {
     public JobData empJobData() {
         // 查询职位统计数据
         List<StatData> list = reportMapper.selectJobData();
-        
+
         // 分离成两个列表
         List<String> jobList = new ArrayList<>();
         List<Integer> dataList = new ArrayList<>();
-        
+
         for (StatData data : list) {
             jobList.add(data.getName());
             dataList.add(data.getValue());
         }
-        
+
         // 封装成JobData对象
         return new JobData(jobList, dataList);
     }
@@ -54,5 +55,26 @@ public class ReportServiceImpl implements ReportService {
     public List<StudentDegreeData> studentDegreeData() {
         List<StudentDegreeData> studentDegreeData = reportMapper.studentDegreeData();
         return studentDegreeData;
+    }
+
+    /**
+     * @return クラス別人数集計
+     */
+    @Override
+    public StudentCountData studentCountData() {
+        // 查询班级人数统计数据
+        List<StatData> list = reportMapper.selectClazzData();
+        
+        // 分离成两个列表
+        List<String> clazzList = new ArrayList<>();
+        List<Integer> dataList = new ArrayList<>();
+        
+        for (StatData data : list) {
+            clazzList.add(data.getName());
+            dataList.add(data.getValue());
+        }
+        
+        // 封装成StudentCountData对象
+        return new StudentCountData(clazzList, dataList);
     }
 }

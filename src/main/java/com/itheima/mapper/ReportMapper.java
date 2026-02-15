@@ -2,6 +2,7 @@ package com.itheima.mapper;
 
 import com.itheima.pojo.StatData;
 import com.itheima.vo.JobData;
+import com.itheima.vo.StudentCountData;
 import com.itheima.vo.StudentDegreeData;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -56,5 +57,15 @@ public interface ReportMapper {
             "group by degree " +
             "order by degree")
     List<StudentDegreeData> studentDegreeData();
+
+    /**
+     * クラス別人数集計
+     */
+    @Select("select c.name, count(s.id) as value " +
+            "from clazz c " +
+            "left join student s on c.id = s.clazz_id " +
+            "group by c.id, c.name " +
+            "order by c.id")
+    List<StatData> selectClazzData();
 
 }

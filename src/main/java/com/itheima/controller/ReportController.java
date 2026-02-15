@@ -5,6 +5,7 @@ import com.itheima.pojo.Result;
 import com.itheima.pojo.StatData;
 import com.itheima.service.ReportService;
 import com.itheima.vo.JobData;
+import com.itheima.vo.StudentCountData;
 import com.itheima.vo.StudentDegreeData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,7 +44,8 @@ public class ReportController {
 
     //クラス別人数集計
     @GetMapping("/studentCountData")
-    public Result studentCountData(){
-
+    public Result studentCountData() {
+        StudentCountData studentCountData = reportService.studentCountData();
+        return Result.success(studentCountData);
     }
 }

@@ -2,6 +2,7 @@ package com.itheima.service;
 
 import com.itheima.pojo.StatData;
 import com.itheima.vo.JobData;
+import com.itheima.vo.StudentCountData;
 import com.itheima.vo.StudentDegreeData;
 
 import java.util.List;
@@ -15,5 +16,8 @@ public interface ReportService {
 
     //受講者の学歴別人数集計
     List<StudentDegreeData> studentDegreeData();
+
+    //クラス別人数集計
+    StudentCountData studentCountData();
 
 }
