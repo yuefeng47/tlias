@@ -1405,3 +1405,15 @@ Unconditional classes:
 2026-02-15 19:25:41.522 [main] INFO  com.itheima.TliasProjectApplication-Started TliasProjectApplication in 1.917 seconds (JVM running for 2.902)
 2026-02-15 19:25:41.523 [main] DEBUG o.s.boot.availability.ApplicationAvailabilityBean-Application availability state LivenessState changed to CORRECT
 2026-02-15 19:25:41.524 [main] DEBUG o.s.boot.availability.ApplicationAvailabilityBean-Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2026-02-15 19:59:51.018 [SpringApplicationShutdownHook] DEBUG o.s.boot.availability.ApplicationAvailabilityBean-Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2026-02-15 19:59:51.019 [SpringApplicationShutdownHook] DEBUG o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7997b197, started on Sun Feb 15 19:25:40 JST 2026
+2026-02-15 19:59:51.019 [SpringApplicationShutdownHook] DEBUG o.s.b.c.p.s.ConfigurationPropertySourcesPropertyResolver$DefaultResolver-Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+2026-02-15 19:59:51.022 [SpringApplicationShutdownHook] DEBUG o.s.context.support.DefaultLifecycleProcessor-Stopping beans in phase 2147483647
+2026-02-15 19:59:51.023 [SpringApplicationShutdownHook] DEBUG o.s.context.support.DefaultLifecycleProcessor-Bean 'webServerGracefulShutdown' completed its stop procedure
+2026-02-15 19:59:51.023 [SpringApplicationShutdownHook] DEBUG o.s.context.support.DefaultLifecycleProcessor-Stopping beans in phase 2147483646
+2026-02-15 19:59:51.167 [SpringApplicationShutdownHook] DEBUG o.s.context.support.DefaultLifecycleProcessor-Bean 'webServerStartStop' completed its stop procedure
+2026-02-15 19:59:51.167 [SpringApplicationShutdownHook] DEBUG o.s.context.support.DefaultLifecycleProcessor-Stopping beans in phase -2147483647
+2026-02-15 19:59:51.167 [SpringApplicationShutdownHook] DEBUG o.s.context.support.DefaultLifecycleProcessor-Bean 'springBootLoggingLifecycle' completed its stop procedure
+2026-02-15 19:59:51.168 [SpringApplicationShutdownHook] DEBUG o.s.jmx.export.annotation.AnnotationMBeanExporter-Unregistering JMX-exposed beans on shutdown
+2026-02-15 19:59:51.168 [SpringApplicationShutdownHook] DEBUG o.s.jmx.export.annotation.AnnotationMBeanExporter-Unregistering JMX-exposed beans
+2026-02-15 19:59:51.168 [SpringApplicationShutdownHook] DEBUG o.s.scheduling.concurrent.ThreadPoolTaskExecutor-Shutting down ExecutorService 'applicationTaskExecutor'
